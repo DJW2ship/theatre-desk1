@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#09090b" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="icon.svg" type="image/svg+xml" />
+  <title>Theatre Desk — Every production. One workspace.</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#dashboard"><span class="brand-mark">T<span>·</span></span><span class="brand-copy">THEATRE DESK<small>Every production. One workspace.</small></span></a>
+      <div class="production-switch"><span class="production-symbol">✦</span><span><small>ACTIVE PRODUCTION</small><strong id="sidebarProduction">Your production</strong></span><button id="productionMenu" aria-label="Production settings">···</button></div>
+      <nav id="desktopNav" aria-label="Main navigation"></nav>
+      <div class="sidebar-bottom"><div class="offline-card"><span class="offline-dot"></span><span><strong id="syncLabel">Saved locally</strong><small id="syncDetail">This device · offline-ready</small></span></div><button class="director-chip" id="profileButton"><span class="avatar">?</span><span><strong>Your profile</strong><small>Director profile</small></span><span class="more">···</span></button></div>
+    </aside>
+    <main class="main-area">
+      <header class="topbar"><div class="mobile-brand"><span class="brand-mark">T<span>·</span></span><strong id="mobileProduction">Your production</strong></div><div class="top-context" id="topContext">Production workspace <span>/</span> <b>Dashboard</b></div><div class="top-actions"><label class="global-search"><span>⌕</span><input id="globalSearch" type="search" placeholder="Search this production…" aria-label="Search this production" /><kbd>⌘ K</kbd></label><span class="connection"><i></i><span id="connectionText">Local data</span></span><button class="btn ghost small" id="authButton" type="button" hidden>Local only</button><button class="top-icon" id="quickCapture" aria-label="Quick capture">＋</button><button class="avatar top-avatar" aria-label="Edit director profile">?</button></div></header>
+      <div id="view" class="view"></div>
+    </main>
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation"></nav>
+  </div>
+  <div class="modal-backdrop" id="modalBackdrop" hidden><section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button class="modal-close" id="modalClose" aria-label="Close">×</button><div id="modalContent"></div></section></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+  <script src="pwa.js"></script>
+</body>
+</html>
